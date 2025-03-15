@@ -1,3 +1,6 @@
+console.log("✅ products.js loaded successfully!");
+console.log(allProducts);
+
 const allProducts = [
     // 📌 Laptops (8 Products)
     { id: 1, name: "Apple MacBook Air M2", price: "₹1,14,900", image: "laptops/01.png",
