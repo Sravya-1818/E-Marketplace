@@ -184,7 +184,6 @@ const allProducts = [
  
 ];
 
-
 // Function to get cart from localStorage
 function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || [];
@@ -195,7 +194,7 @@ function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Function to add product to cart
+// Function to add a product to cart
 function addToCart(productId) {
     let cart = getCart();
     let product = allProducts.find(p => p.id === productId);
@@ -210,29 +209,21 @@ function addToCart(productId) {
         }
         
         saveCart(cart);
+        updateCartCount(); // Update cart count in navbar
         alert(`${product.name} added to cart! 🛒`);
     }
 }
 
-// Function to load products dynamically
-function displayProducts(category) {
-    let productList = document.getElementById(`${category}-list`);
-    if (!productList) return;
-    
-    let products = allProducts.filter(product => product.category === category);
-    
-    products.forEach(product => {
-        productList.innerHTML += `
-            <div class="product">
-                <div class="product_category"><img src="${product.image}" alt="${product.name}"></div>
-                <div class="name">${product.name}</div>
-                <div class="price">${product.price}</div>
-                <div class="shopping">
-                    <button class="cart-btn" onclick="addToCart(${product.id})">
-                        <i class="fa fa-shopping-cart"></i> Add to Cart
-                    </button>
-                </div>
-            </div>
+// Function to update the cart count in navbar
+function updateCartCount() {
+    let cart = getCart();
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("headerCartCount").textContent = totalItems;
+}
+
+// Run this function on page load to keep cart count updated
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
         `;
     });
 }
