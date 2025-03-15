@@ -81,19 +81,13 @@ if (product) {
     document.getElementById("product-price").textContent = product.price;
     document.getElementById("product-description").textContent = product.description;
 
-    // Load Specifications
-    const specsList = document.getElementById("product-specs");
-    product.specifications.forEach(spec => {
-        let li = document.createElement("li");
-        li.textContent = spec;
-        specsList.appendChild(li);
-    });
-
-    // Add event listener for "Add to Cart" button
-    document.getElementById("addToCartBtn").addEventListener("click", function() {
-        addToCart(product.id);
-    });
-
+    // Ensure the button is properly selected and event listener is added
+    const addToCartButton = document.getElementById("addToCartBtn");
+    if (addToCartButton) {
+        addToCartButton.addEventListener("click", function() {
+            addToCart(product.id);
+        });
+    }
 } else {
     document.body.innerHTML = "<h2>Product not found</h2>";
 }
