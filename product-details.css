@@ -1,0 +1,265 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+}
+
+nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Product Details Section */
+.product-details {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Container */
+.product-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Product Image Styling */
+.product-image img {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Information */
+.product-info {
+    max-width: 500px;
+}
+
+.product-info h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.product-info h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+#product-specs {
+    margin-top: 10px;
+}
+
+#product-specs li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Quantity Selector */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.quantity-selector button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.quantity-selector button:hover {
+    background: #0056b3;
+}
+
+#quantity {
+    font-size: 18px;
+    margin: 0 15px;
+}
+
+/* Buttons Section */
+.product-buttons {
+    margin-top: 20px;
+}
+
+.buy-btn, .cart-btn {
+    background: #ff5a5f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+.cart-btn {
+    background: #28a745;
+}
+
+.buy-btn:hover {
+    background: #cc4c50;
+}
+
+.cart-btn:hover {
+    background: #218838;
+}
+
+/* Similar Products Section */
+.similar-products {
+    margin-top: 40px;
+}
+/* Similar Product Image Styling */
+.product .product_category {
+    width: 100%;
+    height: 150px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.product .product_category img {
+    width: 100%; /* Make image fully fit inside */
+    height: 100%; /* Ensure it maintains aspect ratio */
+    object-fit: contain; /* Keeps image inside without distortion */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+
+.similar-products h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.list .product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.list .product:hover {
+    transform: translateY(-5px);
+}
+
+/* Reviews Section */
+.reviews {
+    margin-top: 40px;
+}
+
+.reviews h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#reviews-list {
+    margin-bottom: 20px;
+}
+
+.review {
+    background: #f8f9fa;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#submit-review {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#submit-review:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .product-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
