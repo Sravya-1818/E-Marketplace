@@ -1,5 +1,3 @@
-console.log("✅ products.js loaded successfully!");
-console.log(allProducts);
 
 const allProducts = [
     // 📌 Laptops (8 Products)
@@ -186,6 +184,8 @@ const allProducts = [
 
  
 ];
+console.log("✅ products.js loaded successfully!");
+console.log(allProducts);
 
 
 
