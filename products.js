@@ -184,48 +184,5 @@ const allProducts = [
  
 ];
 
-// Function to get cart from localStorage
-function getCart() {
-    return JSON.parse(localStorage.getItem("cart")) || [];
-}
-
-// Function to save cart to localStorage
-function saveCart(cart) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-// Function to add a product to cart
-function addToCart(productId) {
-    let cart = getCart();
-    let product = allProducts.find(p => p.id === productId);
-    
-    if (product) {
-        let cartItem = cart.find(item => item.id === productId);
-        
-        if (cartItem) {
-            cartItem.quantity += 1;
-        } else {
-            cart.push({ ...product, quantity: 1 });
-        }
-        
-        saveCart(cart);
-        updateCartCount(); // Update cart count in navbar
-        alert(`${product.name} added to cart! 🛒`);
-    }
-}
-
-// Function to update the cart count in navbar
-function updateCartCount() {
-    let cart = getCart();
-    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById("headerCartCount").textContent = totalItems;
-}
-
-// Run this function on page load to keep cart count updated
-document.addEventListener("DOMContentLoaded", updateCartCount);
-
-        `;
-    });
-}
 
 
