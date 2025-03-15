@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShop - Your Vibrant Shopping Destination</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+</head>
+<body>
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                MyShop
+            </div>
+            
+            <nav class="nav-links">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="prodlist" class="nav-link">Products</a>
+
+                <a href="#" class="nav-link">Deals</a>
+                <a href="addtocart.html" class="nav-link cart-icon">
+                    🛒
+                    <span class="cart-count" id="headerCartCount">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Welcome Banner -->
+    
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="cart-header">
+            <h2>Your Shopping Cart</h2>
+            <a href="#" class="continue-shopping">← Continue Shopping</a>
+        </div>
+        
+        <div class="cart-container">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be displayed here -->
+            </div>
+            
+            <div class="cart-summary">
+                <h2 class="summary-header">Order Summary</h2>
+                <div class="summary-row">
+                    <span class="summary-label">Items</span>
+                    <span class="summary-value" id="totalItems">0</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Subtotal</span>
+                    <span class="summary-value" id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Shipping</span>
+                    <span class="summary-value" id="shipping">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span class="summary-label">Tax</span>
+                    <span class="summary-value" id="tax">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+                
+                <button id="checkoutBtn" class="checkout-btn">
+                    <span>Proceed to Checkout</span>
+                    <span>→</span>
+                </button>
+                
+                <div class="promo-input">
+                    <input type="text" class="promo-field" placeholder="Promo Code">
+                    <button class="promo-btn">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span id="notificationMessage"></span>
+    </div>
+    <script src="cart.js" defer></script>
+    
+</body>
+</html>
