@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="product-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">MyShop</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product-details">
+            <div class="product-container">
+                <div class="product-image">
+                    <img id="product-image" src="" alt="Product Image">
+                </div>
+                <div class="product-info">
+                    <h1 id="product-name"></h1>
+                    <p id="product-price"></p>
+                    <p id="product-description"></p>
+
+                    <h3>Specifications</h3>
+                    <ul id="product-specs"></ul>
+
+                    <div class="quantity-selector">
+                        <button id="decrease">-</button>
+                        <span id="quantity">1</span>
+                        <button id="increase">+</button>
+                    </div>
+
+                    <div class="product-buttons">
+                        <button class="buy-btn">Buy Now</button>
+                        <button id="addToCartBtn" class="cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar Products Section -->
+            <div class="similar-products">
+                <h2>Similar Products</h2>
+                <div id="similar-products-list" class="list"></div>
+            </div>
+
+            <!-- Customer Reviews Section -->
+            <div class="reviews">
+                <h2>Customer Reviews</h2>
+                <div id="reviews-list"></div>
+                <h3>Add Your Review</h3>
+                <textarea id="review-text" placeholder="Write your review here..."></textarea>
+                <button id="submit-review">Submit</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="products.js"></script>
+    <script src="product-details.js"></script>
+</body>
+</html>
