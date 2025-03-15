@@ -185,5 +185,56 @@ const allProducts = [
 ];
 
 
+// Function to get cart from localStorage
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
+
+// Function to save cart to localStorage
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Function to add product to cart
+function addToCart(productId) {
+    let cart = getCart();
+    let product = allProducts.find(p => p.id === productId);
+    
+    if (product) {
+        let cartItem = cart.find(item => item.id === productId);
+        
+        if (cartItem) {
+            cartItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        
+        saveCart(cart);
+        alert(`${product.name} added to cart! 🛒`);
+    }
+}
+
+// Function to load products dynamically
+function displayProducts(category) {
+    let productList = document.getElementById(`${category}-list`);
+    if (!productList) return;
+    
+    let products = allProducts.filter(product => product.category === category);
+    
+    products.forEach(product => {
+        productList.innerHTML += `
+            <div class="product">
+                <div class="product_category"><img src="${product.image}" alt="${product.name}"></div>
+                <div class="name">${product.name}</div>
+                <div class="price">${product.price}</div>
+                <div class="shopping">
+                    <button class="cart-btn" onclick="addToCart(${product.id})">
+                        <i class="fa fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+}
 
 
